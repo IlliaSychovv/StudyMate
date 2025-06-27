@@ -1,0 +1,64 @@
+using StudyMate.Application.DTOs;
+using StudyMate.Application.Interfaces;
+using StudyMate.Domain.Interfaces;
+using Mapster;
+using StudyMate.Domain.Entities;
+
+namespace StudyMate.Application.Services;
+
+public class CourseService : ICourseService
+{
+    private readonly ICourseRepository _courseRepository;
+
+    public CourseService(ICourseRepository courseRepository)
+    {
+        _courseRepository = courseRepository;
+    }
+
+    public async Task<List<CourseDto>> GetAllAsync()
+    {
+        var course = await _courseRepository.GetAllAsync();
+        return course.Adapt<List<CourseDto>>();
+    }
+
+    public async Task<CourseDto?> GetByIdAsync(int id)
+    {
+        var course = await _courseRepository.GetByIdAsync(id);
+        if (course == null)
+            return null;
+        
+        return course.Adapt<CourseDto>();
+    }
+
+    public async Task<CourseDto> CreateAsync(CourseCreateDto dto)
+    {
+        var courseEntity = dto.Adapt<Course>();
+        var course = await _courseRepository.AddAsync(courseEntity);
+        return course.Adapt<CourseDto>();
+    }
+
+    // public async Task<CourseDto> UpdateAsync(CourseUpdateDto dto)
+    // {
+    //     var courseEntity = dto.Adapt<Course>();
+    //     var course = await _courseRepository.UpdateAsync(courseEntity);
+    //     return course.Adapt<CourseDto>();
+    // }
+    
+    public async Task<CourseDto> UpdateAsync(CourseUpdateDto dto)
+    { 
+        var existingCourse = await _courseRepository.GetByIdAsync(dto.Id);
+        if (existingCourse == null)
+            return null;
+        
+        existingCourse.Title = dto.Title; 
+        existingCourse.Price = dto.Price;
+
+        var updatedCourse = await _courseRepository.UpdateAsync(existingCourse);
+        return updatedCourse.Adapt<CourseDto>();
+    }
+
+    public async Task<bool> DeleteAsync(int id)
+    {
+        return await _courseRepository.DeleteAsync(id);
+    }
+}
