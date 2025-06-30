@@ -22,6 +22,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddValidatorsFromAssemblyContaining<RegisterValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<CourseCreateValidator>();
  
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
