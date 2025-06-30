@@ -11,11 +11,17 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Identity;
 using System.Text;
+using FluentValidation;
 using Mapster;
 using StudyMate.Domain.Interfaces;
 using StudyMate.Infrastructure.Repositories;
+using FluentValidation.AspNetCore;
+using StudyMate.Application.Validator;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddValidatorsFromAssemblyContaining<RegisterValidator>();
  
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

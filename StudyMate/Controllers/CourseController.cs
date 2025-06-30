@@ -48,7 +48,7 @@ public class CourseController : ControllerBase
         if (course == null)
             return BadRequest();
         
-        return CreatedAtAction(nameof(GetCourseByIdAsync), new { course.Id }, course);
+        return CreatedAtAction(nameof(GetCourseByIdAsync), new { course.Id }, course); 
     }
 
     [HttpPut]

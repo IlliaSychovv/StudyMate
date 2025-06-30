@@ -1,0 +1,16 @@
+C:\Users\Admin\RiderProjects\StudyMate\StudyMate.Application\bin\Debug\net8.0\StudyMate.Application.deps.json
+C:\Users\Admin\RiderProjects\StudyMate\StudyMate.Application\bin\Debug\net8.0\StudyMate.Application.dll
+C:\Users\Admin\RiderProjects\StudyMate\StudyMate.Application\bin\Debug\net8.0\StudyMate.Application.pdb
+C:\Users\Admin\RiderProjects\StudyMate\StudyMate.Application\bin\Debug\net8.0\StudyMate.Domain.dll
+C:\Users\Admin\RiderProjects\StudyMate\StudyMate.Application\bin\Debug\net8.0\StudyMate.Domain.pdb
+C:\Users\Admin\RiderProjects\StudyMate\StudyMate.Application\obj\Debug\net8.0\StudyMate.Application.csproj.AssemblyReference.cache
+C:\Users\Admin\RiderProjects\StudyMate\StudyMate.Application\obj\Debug\net8.0\StudyMate.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\RiderProjects\StudyMate\StudyMate.Application\obj\Debug\net8.0\StudyMate.Application.AssemblyInfoInputs.cache
+C:\Users\Admin\RiderProjects\StudyMate\StudyMate.Application\obj\Debug\net8.0\StudyMate.Application.AssemblyInfo.cs
+C:\Users\Admin\RiderProjects\StudyMate\StudyMate.Application\obj\Debug\net8.0\StudyMate.Application.csproj.CoreCompileInputs.cache
+C:\Users\Admin\RiderProjects\StudyMate\StudyMate.Application\obj\Debug\net8.0\StudyMat.D0298299.Up2Date
+C:\Users\Admin\RiderProjects\StudyMate\StudyMate.Application\obj\Debug\net8.0\StudyMate.Application.dll
+C:\Users\Admin\RiderProjects\StudyMate\StudyMate.Application\obj\Debug\net8.0\refint\StudyMate.Application.dll
+C:\Users\Admin\RiderProjects\StudyMate\StudyMate.Application\obj\Debug\net8.0\StudyMate.Application.pdb
+C:\Users\Admin\RiderProjects\StudyMate\StudyMate.Application\obj\Debug\net8.0\ref\StudyMate.Application.dll
+C:\Users\Admin\RiderProjects\StudyMate\StudyMate.Application\obj\Debug\net8.0\StudyMate.Application.sourcelink.json
