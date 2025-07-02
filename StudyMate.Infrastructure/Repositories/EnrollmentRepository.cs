@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using StudyMate.Domain.Entities;
-using StudyMate.Domain.Interfaces;
+using StudyMate.Application.Interfaces;
 using StudyMate.Infrastructure.Data;
 
 namespace StudyMate.Infrastructure.Repositories;

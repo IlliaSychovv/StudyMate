@@ -13,7 +13,6 @@ using Microsoft.AspNetCore.Identity;
 using System.Text;
 using FluentValidation;
 using Mapster;
-using StudyMate.Domain.Interfaces;
 using StudyMate.Infrastructure.Repositories;
 using FluentValidation.AspNetCore;
 using StudyMate.Application.Validator;

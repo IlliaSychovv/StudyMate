@@ -1,7 +1,6 @@
 using StudyMate.Application.DTOs;
 using StudyMate.Application.Interfaces;
 using StudyMate.Domain.Entities;
-using StudyMate.Domain.Interfaces;
 using Mapster;
 
 namespace StudyMate.Application.Services;
