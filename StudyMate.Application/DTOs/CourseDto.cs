@@ -1,6 +1,6 @@
 namespace StudyMate.Application.DTOs;
 
-public class CourseDto
+public record CourseDto
 {
     public int Id { get; set; }
     public string Title { get; set; }

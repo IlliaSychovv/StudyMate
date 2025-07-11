@@ -3,6 +3,7 @@ using StudyMate.Application.DTOs;
 using StudyMate.Domain.Entities;
 using Mapster;
 using Microsoft.AspNetCore.Identity;
+using StudyMate.Application.Interfaces.Services;
 
 namespace StudyMate.Application.Services;
 

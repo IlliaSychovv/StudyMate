@@ -23,8 +23,5 @@ public class CourseCreateValidator : AbstractValidator<CourseCreateDto>
             .NotEmpty().WithMessage("ReleaseYear is required")
             .GreaterThan(1500).WithMessage("ReleaseYear must be greater than 1500")
             .LessThan(2026).WithMessage("ReleaseYear must be greater than 2026");
-
-        RuleFor(x => x.InstructorId)
-            .NotEmpty().WithMessage("InstructorId is required");
     }
 }

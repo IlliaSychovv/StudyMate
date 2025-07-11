@@ -1,6 +1,6 @@
 using StudyMate.Domain.Entities;
 
-namespace StudyMate.Application.Interfaces;
+namespace StudyMate.Application.Interfaces.Services;
 
 public interface IJwtTokenService
 {

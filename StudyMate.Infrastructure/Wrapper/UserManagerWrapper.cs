@@ -2,7 +2,7 @@ using StudyMate.Application.Interfaces;
 using StudyMate.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 
-namespace StudyMate.Application.Services;
+namespace StudyMate.Infrastructure.Wrapper;
 
 public class UserManagerWrapper : IUserManagerWrapper
 {

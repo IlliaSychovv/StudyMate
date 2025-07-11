@@ -1,13 +1,13 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using StudyMate.Application.Interfaces;
-using StudyMate.Application.Options;
-using StudyMate.Domain.Entities;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using StudyMate.Application.Interfaces.Services;
+using StudyMate.Application.Options;
+using StudyMate.Domain.Entities;
 
-namespace StudyMate.Application.Services;
+namespace StudyMate.Infrastructure.Services;
 
 public class JwtTokenService : IJwtTokenService
 {

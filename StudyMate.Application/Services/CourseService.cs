@@ -1,6 +1,7 @@
 using StudyMate.Application.DTOs;
-using StudyMate.Application.Interfaces;
 using Mapster;
+using StudyMate.Application.Interfaces.Repositories;
+using StudyMate.Application.Interfaces.Services;
 using StudyMate.Domain.Entities;
 
 namespace StudyMate.Application.Services;
@@ -30,27 +31,19 @@ public class CourseService : ICourseService
     }
 
     public async Task<CourseDto> CreateAsync(CourseCreateDto dto)
-    {
+    { 
         var courseEntity = dto.Adapt<Course>();
+        
         var course = await _courseRepository.AddAsync(courseEntity);
         return course.Adapt<CourseDto>();
     }
-
-    // public async Task<CourseDto> UpdateAsync(CourseUpdateDto dto)
-    // {
-    //     var courseEntity = dto.Adapt<Course>();
-    //     var course = await _courseRepository.UpdateAsync(courseEntity);
-    //     return course.Adapt<CourseDto>();
-    // }
+    
     
     public async Task<CourseDto> UpdateAsync(CourseUpdateDto dto)
     { 
         var existingCourse = await _courseRepository.GetByIdAsync(dto.Id);
         if (existingCourse == null)
             return null;
-        
-        existingCourse.Title = dto.Title; 
-        existingCourse.Price = dto.Price;
 
         var updatedCourse = await _courseRepository.UpdateAsync(existingCourse);
         return updatedCourse.Adapt<CourseDto>();

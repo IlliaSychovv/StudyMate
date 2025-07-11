@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using StudyMate.Application.DTOs;
 
-namespace StudyMate.Application.Interfaces;
+namespace StudyMate.Application.Interfaces.Services;
 
 public interface IAuthService
 {

@@ -1,6 +1,6 @@
 using StudyMate.Application.DTOs;
 
-namespace StudyMate.Application.Interfaces;
+namespace StudyMate.Application.Interfaces.Services;
 
 public interface IEnrollmentService
 {

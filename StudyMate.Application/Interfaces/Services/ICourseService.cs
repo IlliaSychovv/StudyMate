@@ -1,7 +1,6 @@
-using Microsoft.AspNetCore.Http.HttpResults;
 using StudyMate.Application.DTOs;
 
-namespace StudyMate.Application.Interfaces;
+namespace StudyMate.Application.Interfaces.Services;
 
 public interface ICourseService
 {
