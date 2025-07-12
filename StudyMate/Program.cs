@@ -3,11 +3,11 @@ using StudyMate.Application.Options;
 using StudyMate.Infrastructure.Data;
 using StudyMate.Infrastructure.SeedData;
 using StudyMate.Domain.Entities;
-using StudyMate.Application.DTOs;
 using Microsoft.AspNetCore.Identity;
 using FluentValidation;
 using Mapster;
 using FluentValidation.AspNetCore;
+using StudyMate.Application.DTOs.Course;
 using StudyMate.Application.Validator;
 using StudyMate.Extensions;
 using StudyMate.Extensions.Endpoints;
@@ -64,5 +64,6 @@ using (var scope = app.Services.CreateScope())
 app.AddAuthEndpoints();
 app.AddCourseEndpoints();
 app.AddEnrollmentEndpoints();
+app.AddLectureEndpoints();
 
 app.Run(); 

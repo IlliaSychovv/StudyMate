@@ -1,4 +1,5 @@
 using StudyMate.Application.DTOs;
+using StudyMate.Application.DTOs.Course;
 
 namespace StudyMate.Application.Interfaces.Services;
 

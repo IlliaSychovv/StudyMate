@@ -22,6 +22,8 @@ public static class ServiceCollectionExtensions
         services.AddScoped<ICourseRepository, CourseRepository>();
         services.AddScoped<IEnrollmentService, EnrollmentService>();
         services.AddScoped<IEnrollmentRepository, EnrollmentRepository>();
+        services.AddScoped<IContentService, ContentService>();
+        services.AddScoped<IContentRepository, ContentRepository>();
         
         return services;
     }

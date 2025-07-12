@@ -1,9 +1,9 @@
 using StudyMate.Application.Interfaces.Services;
-using StudyMate.Application.DTOs;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-    
+using StudyMate.Application.DTOs.Course;
+
 namespace StudyMate.Extensions.Endpoints;
 
 public static class CourseEndpoints

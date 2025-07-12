@@ -1,5 +1,6 @@
 using StudyMate.Application.Interfaces.Services;
 using StudyMate.Application.DTOs;
+using StudyMate.Application.DTOs.Auth;
 
 namespace StudyMate.Extensions.Endpoints;
 

@@ -1,3 +1,5 @@
+using StudyMate.Application.DTOs.Course;
+
 namespace StudyMate.Application.DTOs;
 
 public record EnrollmentDto

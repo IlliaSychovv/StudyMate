@@ -1,4 +1,4 @@
-namespace StudyMate.Application.DTOs;
+namespace StudyMate.Application.DTOs.Course;
 
 public record CourseDto
 {

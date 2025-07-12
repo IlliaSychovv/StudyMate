@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Moq;
 using Shouldly;
 using StudyMate.Application.DTOs;
+using StudyMate.Application.DTOs.Auth;
 using StudyMate.Application.Interfaces;
 using StudyMate.Application.Interfaces.Services;
 using StudyMate.Application.Services;

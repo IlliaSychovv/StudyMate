@@ -1,5 +1,6 @@
 using FluentValidation;
 using StudyMate.Application.DTOs;
+using StudyMate.Application.DTOs.Auth;
 
 namespace StudyMate.Application.Validator;
 

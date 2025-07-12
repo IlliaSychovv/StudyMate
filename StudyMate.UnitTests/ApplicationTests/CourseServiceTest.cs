@@ -4,6 +4,7 @@ using StudyMate.Application.Services;
 using Shouldly;
 using Moq;
 using StudyMate.Application.DTOs;
+using StudyMate.Application.DTOs.Course;
 
 namespace TestProject1.ApplicationTests;
 

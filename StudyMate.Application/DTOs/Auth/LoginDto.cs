@@ -1,4 +1,4 @@
-namespace StudyMate.Application.DTOs;
+namespace StudyMate.Application.DTOs.Auth;
 
 public record LoginDto
 {

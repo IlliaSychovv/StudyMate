@@ -1,6 +1,7 @@
 using StudyMate.Application.DTOs;
 using StudyMate.Domain.Entities;
 using Mapster;
+using StudyMate.Application.DTOs.Course;
 using StudyMate.Application.Interfaces.Repositories;
 using StudyMate.Application.Interfaces.Services;
 
@@ -47,7 +48,7 @@ public class EnrollmentService : IEnrollmentService
         return course.Adapt<List<CourseDto>>();
     }
 
-    public async Task<List<string>> GetStudentsOfCourseAsync(int courseId, string requesterId)
+    public async Task<List<string?>> GetStudentsOfCourseAsync(int courseId, string requesterId)
     {
         var student = await _enrollmentRepository.GetStudentsOfCourseAsync(courseId);
         return student

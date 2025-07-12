@@ -1,5 +1,6 @@
 using StudyMate.Application.DTOs;
 using Mapster;
+using StudyMate.Application.DTOs.Course;
 using StudyMate.Application.Interfaces.Repositories;
 using StudyMate.Application.Interfaces.Services;
 using StudyMate.Domain.Entities;
