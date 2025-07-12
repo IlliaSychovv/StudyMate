@@ -24,8 +24,10 @@ public static class ContentEndpoints
         group.MapPost("{courseId}/lectures", async (IContentService service, int courseId, CreateLectureDto dto) =>
         {
             var lecture = await service.CreateLectureAsync(courseId, dto);
-            return Results.Created($"{courseId}/lectures/{lecture}", lecture);
-            //return Results.Ok(lecture);
+            if (lecture == null)
+                return Results.BadRequest();
+            
+            return Results.Created();
         }).WithTags("Lectures");
 
         group.MapDelete("lectures/{id}", async (IContentService service, int id) =>
