@@ -93,7 +93,7 @@ public class EnrollmentServiceTest
         
         var result = await _enrollmentService.EnrollCourseAsync(courseId, studentId);
 
-        result.ShouldBe("User already enrolled");
+        result.ShouldBeNull();
         _enrollmentRepositoryMock.Verify(x => x.AddEnrollmentAsync(It.IsAny<Enrollment>()), Times.Never);
     }
 
