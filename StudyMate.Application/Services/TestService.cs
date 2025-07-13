@@ -69,16 +69,13 @@ public class TestService : ITestService
             }
         }
 
-        var testResult = new TestResult
-        {
-            UserId = userId,
-            TestId = dto.TestId,
-            Score = score,
-            TotalQuestions = questions.Count,
-            AnsweredAt = DateTime.UtcNow
-        };
+        var testResult = dto.Adapt<TestResult>();
+        testResult.UserId = userId;
+        testResult.Score = score;
+        testResult.TotalQuestions = questions.Count;
+        testResult.AnsweredAt = DateTime.UtcNow;
         
-        var savedResult = await _testRepository.AddTestAsync(testResult);
+        var savedResult = await _testRepository.AddTestResultAsync(testResult);
         return savedResult.Adapt<TestResultDto>();
     }
 

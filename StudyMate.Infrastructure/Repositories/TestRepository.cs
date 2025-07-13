@@ -38,6 +38,13 @@ public class TestRepository : ITestRepository
         return test;
     }
 
+    public async Task<TestResult> AddTestResultAsync(TestResult testResult)
+    {
+        await _context.TestResults.AddAsync(testResult);
+        await _context.SaveChangesAsync();
+        return testResult;
+    }
+
     public async Task<Test> UpdateTestAsync(Test test)
     {
         _context.Tests.Update(test);
