@@ -26,4 +26,7 @@ public class AppDbContext : IdentityDbContext<User>
     public DbSet<Course> Courses { get; set; }
     public DbSet<Enrollment> Enrollments { get; set; }
     public DbSet<Lecture> Lectures { get; set; }
+    public DbSet<Test> Tests { get; set; }
+    public DbSet<Question> Questions { get; set; }
+    public DbSet<TestResult> TestResults { get; set; }
 }
