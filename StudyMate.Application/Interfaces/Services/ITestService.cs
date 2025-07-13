@@ -11,5 +11,5 @@ public interface ITestService
     Task<List<TestDto>> GetByCourseIdAsync(int courseId);
     Task<TestDto> CreateTestAsync(TestCreateDto dto, string instructorId);
     Task<TestResultDto> SubmitTestAsync(TestAnswerDto dto, string userId);
-    Task<List<TestResult>> GetResultsAsync(int testId, string userId);
+    Task<List<TestResultDto>> GetResultsAsync(int testId, string userId);
 }

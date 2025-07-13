@@ -65,5 +65,6 @@ app.AddAuthEndpoints();
 app.AddCourseEndpoints();
 app.AddEnrollmentEndpoints();
 app.AddLectureEndpoints();
+app.AddTestEndpoint();
 
 app.Run(); 

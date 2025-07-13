@@ -79,9 +79,9 @@ public class TestService : ITestService
         return savedResult.Adapt<TestResultDto>();
     }
 
-    public async Task<List<TestResult>> GetResultsAsync(int testId, string userId)
+    public async Task<List<TestResultDto>> GetResultsAsync(int testId, string userId)
     {
         var result = await _testRepository.GetByTestAndUserAsync(testId, userId);
-        return result.Adapt<List<TestResult>>();
+        return result.Adapt<List<TestResultDto>>();
     }
 }

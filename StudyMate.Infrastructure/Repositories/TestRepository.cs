@@ -21,7 +21,9 @@ public class TestRepository : ITestRepository
     
     public async Task<Test?> GetTestByIdAsync(int testId)
     {
-        return await _context.Tests.FindAsync(testId);
+        return await _context.Tests
+            .Include(t => t.Questions)
+            .FirstOrDefaultAsync(t => t.Id == testId);
     }
 
     public async Task<List<Test>> GetTestByCourseIdAsync(int courseId)

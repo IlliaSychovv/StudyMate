@@ -21,6 +21,24 @@ public class AppDbContext : IdentityDbContext<User>
             .WithMany(c => c.Enrollments)
             .HasForeignKey(e => e.CourseId)
             .OnDelete(DeleteBehavior.Restrict);
+        
+        builder.Entity<Test>()
+            .HasOne(e => e.Course)
+            .WithMany()
+            .HasForeignKey(e => e.CourseId)
+            .OnDelete(DeleteBehavior.Restrict);
+        
+        builder.Entity<Question>()
+            .HasOne(e => e.Test)
+            .WithMany(t => t.Questions)
+            .HasForeignKey(e => e.TestId)
+            .OnDelete(DeleteBehavior.Restrict);
+        
+        builder.Entity<TestResult>()
+            .HasOne(e => e.Test)
+            .WithMany(t => t.TestResults)
+            .HasForeignKey(e => e.TestId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
     
     public DbSet<Course> Courses { get; set; }
