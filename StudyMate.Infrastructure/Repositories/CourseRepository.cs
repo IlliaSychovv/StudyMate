@@ -47,4 +47,18 @@ public class CourseRepository : ICourseRepository
         _context.Courses.Remove(course);
         return await _context.SaveChangesAsync() > 0;
     }
+
+    public async Task<List<Course>> GetCoursesByUserIdAsync(string userId)
+    {
+        return await _context.Courses
+            .Where(x => x.Enrollments.Any(y => y.UserId == userId))
+            .ToListAsync();
+    }
+    
+    public async Task<List<Course>> GetCoursesByInstructorIdAsync(string instructorId)
+    {
+        return await _context.Courses
+            .Where(x => x.InstructorId == instructorId)
+            .ToListAsync();
+    }
 }

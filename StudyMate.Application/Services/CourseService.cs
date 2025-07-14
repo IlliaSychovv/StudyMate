@@ -54,4 +54,16 @@ public class CourseService : ICourseService
     {
         return await _courseRepository.DeleteAsync(id);
     }
+
+    public async Task<List<CourseDto>> GetCoursesByUserIdAsync(string userId)
+    {
+        var courses = await _courseRepository.GetCoursesByUserIdAsync(userId);
+        return courses.Adapt<List<CourseDto>>();
+    }
+
+    public async Task<List<CourseDto>> GetCoursesByInstructorIdAsync(string instructorId)
+    {
+        var courses = await _courseRepository.GetCoursesByInstructorIdAsync(instructorId);
+        return courses.Adapt<List<CourseDto>>();
+    }
 }

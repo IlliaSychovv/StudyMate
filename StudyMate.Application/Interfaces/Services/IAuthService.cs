@@ -7,5 +7,5 @@ namespace StudyMate.Application.Interfaces.Services;
 public interface IAuthService
 {
     Task<IdentityResult> RegisterUserAsync(RegisterDto dto);
-    Task<string> LoginAsync(string username, string password);
+    Task<ResponseLoginDto?> LoginAsync(string username, string password);
 }

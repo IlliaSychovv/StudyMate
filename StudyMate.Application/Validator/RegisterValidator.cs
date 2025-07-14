@@ -1,5 +1,4 @@
 using FluentValidation;
-using StudyMate.Application.DTOs;
 using StudyMate.Application.DTOs.Auth;
 
 namespace StudyMate.Application.Validator;
@@ -22,5 +21,8 @@ public class RegisterValidator : AbstractValidator<RegisterDto>
             .Matches(@"[\!\@\#\$\%\^\&\*\-]")
             .WithMessage("Password must contain at least one special character: !\\@\\#\\$\\%\\^\\&\\*\\-")
             .Matches(@"[A-Z]").WithMessage("Password must contain at least one uppercase letter: A-Z");
+
+        RuleFor(x => x.Role)
+            .NotEmpty().WithMessage("Role is required and should be of the following: Student, Instructor, or Teacher");
     }
 }

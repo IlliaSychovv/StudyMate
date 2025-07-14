@@ -25,7 +25,7 @@ public static class AuthEndpoints
             if (login == null)
                 return Results.Unauthorized();
             
-            return Results.Ok(new { Token = login });
+            return Results.Ok(login);
         }).WithTags("Auth");
     }
 }

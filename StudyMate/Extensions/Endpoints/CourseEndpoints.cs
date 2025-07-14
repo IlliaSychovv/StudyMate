@@ -27,7 +27,7 @@ public static class CourseEndpoints
             return Results.Ok(course);
         }).WithTags("Courses");
 
-        group.MapPost("/", [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)] async (HttpContext context, ICourseService service, CourseCreateDto dto) =>
+        group.MapPost("/", [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Instructor,Teacher")] async (HttpContext context, ICourseService service, CourseCreateDto dto) =>
         {
             var userId = context.User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (string.IsNullOrEmpty(userId))
@@ -38,13 +38,13 @@ public static class CourseEndpoints
             return Results.Json(course, statusCode: 201);
         }).WithTags("Courses");
 
-        group.MapPut("/", async (ICourseService service, CourseUpdateDto dto) =>
+        group.MapPut("/", [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Instructor,Teacher")] async (ICourseService service, CourseUpdateDto dto) =>
         {
             var updatedCourse = await service.UpdateAsync(dto);
             return Results.Ok(updatedCourse);
         }).WithTags("Courses");
 
-        group.MapDelete("/{id}", async (ICourseService service, int id) =>
+        group.MapDelete("/{id}",[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Instructor")] async (ICourseService service, int id) =>
         {
             var deleted = await service.DeleteAsync(id);
             if (!deleted)

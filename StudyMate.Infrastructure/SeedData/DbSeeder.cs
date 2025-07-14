@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using StudyMate.Domain.Entities;
 using StudyMate.Infrastructure.Data;
+using StudyMate.Application.Interfaces.Services;
+using StudyMate.Application.Services;
 
 namespace StudyMate.Infrastructure.SeedData;
 
@@ -8,17 +10,23 @@ public class DbSeeder
 {
     private readonly AppDbContext _context;
     private readonly UserManager<User> _userManager;
+    private readonly IRoleService _roleService;
 
-    public DbSeeder(AppDbContext context, UserManager<User> userManager)
+    public DbSeeder(AppDbContext context, UserManager<User> userManager, RoleService roleService)
     {
         _context = context;
         _userManager = userManager;
+        _roleService = roleService;
     }
 
     public async Task Seed()
     {
         if (_context.Courses.Any() || _context.Enrollments.Any() || _context.Users.Any())
             return;
+        
+        await _roleService.CreateRoleAsync("Teacher");
+        await _roleService.CreateRoleAsync("Instructor");
+        await _roleService.CreateRoleAsync("Student");
 
         var instructor = new User
         {
@@ -47,6 +55,9 @@ public class DbSeeder
 
         if (instructor == null || student == null)
             throw new Exception("Instructor or student not found after creation");
+        
+        await _roleService.AddUserToRoleAsync(instructor.Id, "Instructor");
+        await _roleService.AddUserToRoleAsync(student.Id, "Student");
 
         var course = new Course
         {

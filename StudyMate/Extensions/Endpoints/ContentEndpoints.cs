@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Authorization;
 using StudyMate.Application.Interfaces.Services;
 using StudyMate.Application.DTOs.Lecture;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace StudyMate.Extensions.Endpoints;
 
@@ -21,7 +23,7 @@ public static class ContentEndpoints
             return Results.Ok(lecture);
         }).WithTags("Lectures");
 
-        group.MapPost("{courseId}/lectures", async (IContentService service, int courseId, CreateLectureDto dto) =>
+        group.MapPost("{courseId}/lectures", [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Instructor,Teacher")] async (IContentService service, int courseId, CreateLectureDto dto) =>
         {
             var lecture = await service.CreateLectureAsync(courseId, dto);
             if (lecture == null)
@@ -30,7 +32,7 @@ public static class ContentEndpoints
             return Results.Created();
         }).WithTags("Lectures");
 
-        group.MapDelete("lectures/{id}", async (IContentService service, int id) =>
+        group.MapDelete("lectures/{id}", [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Instructor")] async (IContentService service, int id) =>
         {
             var deletedLecture = await service.DeleteLectureAsync(id);
             if (!deletedLecture)
